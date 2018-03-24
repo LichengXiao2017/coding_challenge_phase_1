@@ -63,7 +63,7 @@ processed_data/
 			Upgraded from original link.csv. Added a column for corresponding mask id at the end of each row.
 
 
-/final_data
+final_data/
 
 		unchanged original folder
 		
