@@ -1,6 +1,6 @@
 # coding_challenge_phase_1
 
-Structure of the repository:
+Structure of the repository's code and notebook:
 
 part 1:
 
@@ -21,6 +21,44 @@ part 2:
 	part_2.py		contains class TrainModel, which stored data and methods to build, train, and evaluate the Conv2D deep learning model.
 	
 	part_2_main.ipynb	part 2 main program, showed commands to run the model. 
+
+Structure of the repository's folders:
+
+logs/		
+	
+		part 1. 
+		
+		Log folder automatically generated when parsing and saving contour mask files.
+		
+		Most earlier log files have been deleted.
+		
+processed_data/
+
+		part 1.
+		
+		dcm/
+		
+			contains dcm .txt files, which are parsed from original .dcm files
+			
+		icontour_coords_images/
+		
+			contains .png files of icontour drawn from coordinates lists.
+			
+		icontour_coords_lst/
+		
+			contains .txt files of icontour coordinate list, which are parsed from contour files.
+			
+		mask_image/
+			
+			contains .png files of mask, drawn from mask files.
+			
+		maskfiles/
+			
+			contains .txt files of mask, which are parsed from icontour coordinate list.
+			
+		new_link.csv
+		
+			Upgraded from original link.csv. Added a column for corresponding mask id at the end of each row.
 
 
 
