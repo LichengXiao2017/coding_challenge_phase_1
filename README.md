@@ -12,16 +12,16 @@ Answer to part 1:
     I rewrote the parsing.py to parser.py in an OOP way, so that the methods are encapsulated, and will not conflict or influence other global methods and variables in the code base when referenced.
     Since the poly_to_mask() method in parsing.py used 'outline = 0, fill = 1' when drawing the mask in this code:
     
-      ImageDraw.Draw(img).polygon(xy=polygon, outline=0, fill=1)
+      	ImageDraw.Draw(img).polygon(xy=polygon, outline=0, fill=1)
       
     It seems contradicted to our goal of get a mask of contour, according to the pictures in the study article:
     
-      article link: https://arxiv.org/pdf/1704.04296.pdf
+      	article link: https://arxiv.org/pdf/1704.04296.pdf
       
-      picture: refer to those in above article
+      	picture: refer to those in above article
       
 		
-Therefore, I changed it to 'outline = 1, fill = 0' in parser.py
+	Therefore, I changed it to 'outline = 1, fill = 0' in parser.py
 		
-This change may be further discussed with the prototyping engineer before integration to code base.
+	This change may be further discussed with the prototyping engineer before integration to code base.
 		
