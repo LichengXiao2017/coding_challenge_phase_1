@@ -114,7 +114,11 @@ Answers to part 2:
 	  First, the optimizer now in use is 'adam', but usually 'sgd' is a better choice, which may be implemented in the future.
 
 	  Second, the batch_size, filter number, filter size, number and sturcture of layers, all of them are far from optimal. If there were more time, I can do experiments on these parameters, and try to optimize them.
+	  
+	  Third, the pipeline can't save model to checkpoint or server file now, neither restore model from checkpoint or server file. If there were more time, I can implement the save and restore function, to make the training trackable.
 
-	  Third, the training pipeline can't be deployed to cloud, which makes it really slow. If there were more time, I can use google API to enable the pipeline to be trained on google cloud, which is expotentially accelerated.
+	  Fourth, the training pipeline can't be deployed to cloud, which makes it really slow. If there were more time, I can use google API to enable the pipeline to be trained on google cloud, which is expotentially accelerated.
 
-	  Fourth, ENet is faster and smaller than classical CNN. If there were more time, I can try to implement the pipeline with ENet.
+	  Fifth, ENet is faster and smaller than classical CNN. If there were more time, I can try to implement the pipeline with ENet.
+	  
+	  Sixth, the pipeline is still supervised learning. If there were more time, I can research on the rules of drawing and judging contours, and try to apply reinforcement learning techniques on the pipeline, to transform it into unsupervised learning.
