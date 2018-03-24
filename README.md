@@ -1,5 +1,7 @@
 # coding_challenge_phase_1
 
+Note: Unit tests have been done during coding on jupyter notebook.
+
 Structure of the repository's code and notebook:
 
 part 1:
