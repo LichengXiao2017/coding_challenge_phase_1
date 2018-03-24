@@ -11,20 +11,6 @@ Answer to part 1:
 2. What changes did you make to the code, if any, in order to integrate it into our production code base? 
 	
     I rewrote the parsing.py to parser.py in an OOP way, so that the methods are encapsulated, and will not conflict or influence other global methods and variables in the code base when referenced.
-    Since the poly_to_mask() method in parsing.py used 'outline = 0, fill = 1' when drawing the mask in this code:
-    
-      	ImageDraw.Draw(img).polygon(xy=polygon, outline=0, fill=1)
-      
-    It seems contradicted to our goal of get a mask of contour, according to the pictures in the study article:
-    
-      article link: https://arxiv.org/pdf/1704.04296.pdf
-      
-      picture: refer to those in above article
-      
-		
-	Therefore, in parser.py, I changed it to:
-	
-		outline = 1, fill = 0
-		
-	This change may be further discussed with the prototyping engineer before integration to code base.
-		
+    I tried to change the poly_to_mask() mathod in parsing.py, by replacing 'outline = 0, fill = 1' to 'outline = 1, fill = 0', which seemed more close to the definition of "contour". However, this proved to be a bad idea later in the training of CNN, since the pure "contour" mask is too sparse to effectively train the model. Therefore, I changed back to the original configuration.
+
+Answer to part 2:
