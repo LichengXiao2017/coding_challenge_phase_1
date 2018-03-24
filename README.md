@@ -6,7 +6,7 @@ Answers to part 1:
 	
     Subjective verification is simple. I wrote part_1_verify.py, and use matplotlib.pyplot to draw graph of contour and mask pairs, and save them as .png files under process_data/icontour_coords_images and processed_data/mask_images.
     
-    By comparing each pair of image with eyes, it's easy to confirm that the mask is parsed correctly from contour.
+    By comparing each pair of dcm and mask images in part_1_main.ipynb, it's easy to confirm that the mask is parsed correctly from contour.
     
     If time allows, I can develop a statistical method to measure the accuracy quantitatively.
     
