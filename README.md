@@ -28,9 +28,9 @@ logs/
 	
 		auto generated during part 1. 
 		
-			Log folder automatically generated when parsing and saving contour mask files.
+		Log folder automatically generated when parsing and saving contour mask files.
 		
-			Most earlier log files have been deleted.
+		Most earlier log files have been deleted.
 		
 processed_data/
 
