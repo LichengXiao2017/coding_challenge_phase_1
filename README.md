@@ -16,9 +16,9 @@ Answer to part 1:
       
     It seems contradicted to our goal of get a mask of contour, according to the pictures in the study article:
     
-      	article link: https://arxiv.org/pdf/1704.04296.pdf
+      article link: https://arxiv.org/pdf/1704.04296.pdf
       
-      	picture: refer to those in above article
+      picture: refer to those in above article
       
 		
 	Therefore, in parser.py, I changed it to:
