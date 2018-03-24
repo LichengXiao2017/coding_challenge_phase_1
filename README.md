@@ -1,5 +1,29 @@
 # coding_challenge_phase_1
 
+Structure of the repository:
+
+part 1:
+
+	part_1.py		contains class Masker, which stored the pipeline to generate mask
+	
+	part_1_verify.py	contains class Verifier, which stored methods to draw and save graph from dcm, contour, mask
+	
+	parser.py		contains class Parser, which stored methods to parse dcm, contour coords, and mask
+	
+	data_restore.py		contains class DataRestore, which stored methods to restore data from dcm, contour, mask files
+	
+	main.ipynb		earlier version of part 1 main program, showed contour "outline" masking graphs
+	
+	part_1_main.ipynb	later version of part 1 main program, showed contour "inside-filled" masking graphs
+
+part 2:
+
+	part_2.py		contains class TrainModel, which stored data and methods to build, train, and evaluate the Conv2D deep learning model.
+	
+	part_2_main.ipynb	part 2 main program, showed commands to run the model. 
+
+
+
 Answers to part 1:
 
 1. How did you verify that you are parsing the contours correctly?
