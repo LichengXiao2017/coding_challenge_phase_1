@@ -15,7 +15,7 @@ Answer to part 1:
 
 Answer to part 2:
 
-  1.Did you change anything from the pipelines built in Parts 1 to better streamline the pipeline built in Part 2? If so, what? If not, is there anything that you can imagine changing in the future?
+1. Did you change anything from the pipelines built in Parts 1 to better streamline the pipeline built in Part 2? If so, what? If not, is there anything that you can imagine changing in the future?
   
   Yes, I discovered that the mask file produced in part 1 by pure "contour" is too sparse for training the model, so I changed the configuration of parser.py in part 1 back to original values as in parsing.py.
   
@@ -26,14 +26,14 @@ Answer to part 2:
   Second, the original dcm and mask can also be rotate at different angles, to generate more correct training sample pairs, which will further facilitate Part 2.
   
   Third, the dcm can be further processed using image processing techniques, so as to make the contour features more apparent.
-  
-  2.How do you/did you verify that the pipeline was working correctly?
-  
+
+2. How do you/did you verify that the pipeline was working correctly?
+   
   I actually trained the pipeline, and the loss and accuracy showed on jupyter notebook, so I knew it did work, although the training speed is really slow.
   
   I even made some prediction using the model, and drawed the graph, compared them with actual mask. However, because the model is far from well-trained, the prediction is almost meaningless.
-  
-  3.Given the pipeline you have built, can you see any deficiencies that you would change if you had more time? If not, can you think of any improvements/enhancements to the pipeline that you could build in?
+
+3. Given the pipeline you have built, can you see any deficiencies that you would change if you had more time? If not, can you think of any improvements/enhancements to the pipeline that you could build in?
   
   Yes, there are some deficienies and possible future improvement approaches.
   
