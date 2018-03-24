@@ -21,7 +21,9 @@ Answer to part 1:
       	picture: refer to those in above article
       
 		
-	Therefore, I changed it to 'outline = 1, fill = 0' in parser.py
+	Therefore, in parser.py, I changed it to:
+	
+		outline = 1, fill = 0
 		
 	This change may be further discussed with the prototyping engineer before integration to code base.
 		
