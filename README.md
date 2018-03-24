@@ -4,7 +4,8 @@ Answer to part 1:
 
 1. How did you verify that you are parsing the contours correctly?
 	
-    Subjective verify is simple. I wrote part_1_verify.py, and use matplotlib.pyplot to draw graph of contour and mask respectively, and save them as .png files, by comparing each pair of image with my eyes, it's easy to confirm that the mask is parsed correctly from contour.
+    Subjective verify is simple. I wrote part_1_verify.py, and use matplotlib.pyplot to draw graph of contour and mask pairs, and save them as .png files under process_data/icontour_coords_images and processed_data/mask_images.
+    By comparing each pair of image with eyes, it's easy to confirm that the mask is parsed correctly from contour.
     If time allows, I can develop a statistical method to measure the accuracy quantitatively.
     
 2. What changes did you make to the code, if any, in order to integrate it into our production code base? 
