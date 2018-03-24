@@ -9,6 +9,7 @@ from data_restore import DataRestore
 from os import walk
 import os
 import re
+import numpy as np
 
 
 # In[5]:
@@ -20,7 +21,21 @@ class Verifier(object):
         self.restore = DataRestore()
 
     # Define method to draw the output image of contour
-    def draw_icontour(self, coords_lst, icontour_key, icontour_name):
+    def draw_save_icontour(self, coords_lst, icontour_key, icontour_name):
+        for coords in coords_lst:    
+            x = coords[0]
+            y = coords[1]
+            plt.scatter(x, y)
+        plt.xlim(0,255)
+        plt.ylim(0,255)
+        icontour_path = 'processed_data/icontour_coords_images/' + icontour_key + '/'
+        if not os.path.exists(icontour_path):
+            os.makedirs(icontour_path)
+        plt.savefig(icontour_path + re.sub(r'\D', "", icontour_name) + '.png')
+        print plt.show()
+    
+    # Similar method without saving .png file
+    def draw_icontour(self, coords_lst):
         for coords in coords_lst:    
             x = coords[0]
             y = coords[1]
@@ -33,10 +48,10 @@ class Verifier(object):
         plt.savefig(icontour_path + re.sub(r'\D', "", icontour_name) + '.png')
         print plt.show()
         
-        # Define method to draw the output image of mask
-        # It looks the same as contour image, so the contours are parsed correct
-        # We can use statistical method to compare the accuracy of all contour-mask pairs to further verify it.
-    def draw_mask(self, mask, mask_key, mask_name):
+    # Define method to draw the output image of mask
+    # It looks the same as contour image, so the contours are parsed correct
+    # We can use statistical method to compare the accuracy of all contour-mask pairs to further verify it.
+    def draw_save_mask(self, mask, mask_key, mask_name):
         for i in range(0, len(mask)):    
             for j in range(0, len(mask)):
                 if mask[i][j] == True:
@@ -47,6 +62,17 @@ class Verifier(object):
         if not os.path.exists(mask_path):
             os.makedirs(mask_path)
         plt.savefig(mask_path + re.sub(r'\D', "", mask_name) + '.png')
+        print plt.show()
+     
+    # Similar method without saving .png file
+    def draw_mask(self, mask):
+        for i in range(0, len(mask)):    
+            for j in range(0, len(mask)):
+                # if the probability of pixel being true is high, draw the dot
+                if mask[i][j] > 0.9:
+                    plt.scatter(j, i)
+        plt.xlim(0,255)
+        plt.ylim(0,255)
         print plt.show()
 
     def draw_icontour_and_mask(self):
@@ -74,13 +100,13 @@ class Verifier(object):
             for name in coords_lst_names:
                 coords_file = coords_lst_path + name
                 coords_lst = self.restore.restore_coords_lst(coords_file)
-                self.draw_icontour(coords_lst, key, name)
+                self.draw_save_icontour(coords_lst, key, name)
 
                 mask_key = coords_lst_mask_dict[key]
                 mask_name = name
                 mask_file = self.masker.mask_folder + mask_key + '/' + mask_name
                 mask = self.restore.restore_mask(mask_file)        
-                self.draw_mask(mask, mask_key, mask_name)
+                self.draw_save_mask(mask, mask_key, mask_name)
             
         
 

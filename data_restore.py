@@ -23,6 +23,7 @@ class DataRestore(object):
         mask = re.sub(r'\]', '],', mask)
         mask = re.sub(r'\],\],', ']]', mask)
         mask = re.sub(r'e', 'e,', mask)
+        mask = re.sub(r'e,\]', 'e]', mask)
         mask = eval(mask)
         return mask
         
